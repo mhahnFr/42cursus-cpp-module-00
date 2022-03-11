@@ -2,10 +2,10 @@
 NAME     = phonebook
 
 # The source files.
-SRC      = phoneBook.cpp contact.cpp main.cpp
+SRC      = PhoneBook.cpp Contact.cpp main.cpp
 
 # The header files.
-HDR      = phoneBook.hpp contact.hpp
+HDR      = PhoneBook.hpp Contact.hpp
 
 # The object files.
 OBJ      = $(SRC:.cpp=.o)
