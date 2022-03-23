@@ -33,7 +33,7 @@ clean:
 	- find . -name \*~ -print -delete
 
 # Removes all files created by this makefile.
-flcean: clean
+fclean: clean
 	- $(RM) $(NAME)
 
 # Recompiles everything.
