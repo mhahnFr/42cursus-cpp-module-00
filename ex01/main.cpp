@@ -41,7 +41,7 @@ int main() {
 		std::cin >> command;
 		if (command.compare("ADD") == 0) {
 			book.add(addContact());
-		} else if (command.compare("SEARCH") != 0) {
+		} else if (command.compare("SEARCH") == 0) {
 			findContact();
 		} else if (command.compare("EXIT") != 0) {
 			std::cout << "Command \"" << command << "\" does not match any!" << std::endl;
