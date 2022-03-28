@@ -29,7 +29,26 @@ Contact addContact() {
 	return contact;
 }
 
-void findContact() {}
+void findAndPrintContact(PhoneBook& book) {
+	int index;
+
+	std::cout << "Enter the index of the contact:" << std::endl;
+	std::cin >> index;
+	if (index >= 0 && index <= 7) {
+		Contact c = book.find(index);
+		if (c.isInitialized()) {
+			std::cout
+				<< "|" << c.getFirstName()
+				<< "|" << c.getLastName()
+				<< "|" << c.getNickName()
+				<< "|" << c.getPhoneNumber()
+				<< "|" << c.getSecret()
+				<< std::endl;
+		} else {
+			std::cout << "Empty!" << std::endl;
+		}
+	}
+}
 
 int main() {
 	PhoneBook book;
@@ -42,7 +61,7 @@ int main() {
 		if (command.compare("ADD") == 0) {
 			book.add(addContact());
 		} else if (command.compare("SEARCH") == 0) {
-			findContact();
+			findAndPrintContact(book);
 		} else if (command.compare("EXIT") != 0) {
 			std::cout << "Command \"" << command << "\" does not match any!" << std::endl;
 		}

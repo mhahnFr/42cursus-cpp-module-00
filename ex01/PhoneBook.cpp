@@ -12,7 +12,8 @@ void PhoneBook::add(Contact contact) {
 }
 
 Contact PhoneBook::find(int index) {
-	// TODO
-	(void) index;
+	if (index >= 0 && index <= 7) {
+		return this->contacts[index];
+	}
 	return Contact();
 }

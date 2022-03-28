@@ -23,6 +23,8 @@ class Contact {
 		std::string getPhoneNumber();
 		void        setPhoneNumber(std::string);
 
+		bool isInitialized();
+
 	private:
 		std::string firstName;
 		std::string lastName;

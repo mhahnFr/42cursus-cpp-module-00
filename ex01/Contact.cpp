@@ -50,3 +50,7 @@ void Contact::setSecret(std::string secret) {
 	this->initialized = true;
 	this->secret = secret;
 }
+
+bool Contact::isInitialized() {
+	return this->initialized;
+}
