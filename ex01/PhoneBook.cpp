@@ -6,12 +6,12 @@ PhoneBook::PhoneBook() {
 
 PhoneBook::~PhoneBook() {}
 
-void add(Contact& contact) {
-	// TODO
-	(void) contact;
+void PhoneBook::add(Contact contact) {
+	this->contacts[this->index] = contact;
+	this->index = this->index == 7 ? 0 : this->index + 1;
 }
 
-Contact find(int index) {
+Contact PhoneBook::find(int index) {
 	// TODO
 	(void) index;
 	return Contact();

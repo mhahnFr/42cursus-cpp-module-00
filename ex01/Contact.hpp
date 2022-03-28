@@ -14,6 +14,9 @@ class Contact {
 		std::string getLastName();
 		void        setLastName(std::string);
 
+		std::string getNickName();
+		void        setNickName(std::string);
+
 		std::string getSecret();
 		void        setSecret(std::string);
 
@@ -23,6 +26,7 @@ class Contact {
 	private:
 		std::string firstName;
 		std::string lastName;
+		std::string nickName;
 		std::string phoneNumber;
 		std::string secret;
 		bool initialized;
