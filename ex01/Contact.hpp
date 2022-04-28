@@ -1,5 +1,4 @@
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
+#pragma once
 
 #include <string>
 
@@ -33,5 +32,3 @@ class Contact {
 		std::string secret;
 		bool initialized;
 };
-
-#endif

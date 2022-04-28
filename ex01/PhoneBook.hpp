@@ -1,5 +1,4 @@
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#pragma once
 
 #include "Contact.hpp"
 
@@ -15,5 +14,3 @@ class PhoneBook {
 		Contact contacts[8];
 		int index;
 };
-
-#endif
