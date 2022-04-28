@@ -3,33 +3,40 @@
 
 #include "PhoneBook.hpp"
 
+std::string prompt() {
+	std::string ret;
+	getline(std::cin, ret);
+	if (std::cin.eof()) {
+		std::cout << "Please exit using the \"EXIT\" command!" << std::endl
+				  << "Exiting..." << std::endl;
+		exit(0);
+	}
+	if (ret.empty()) return prompt();
+	return ret;
+}
+
 Contact addContact() {
 	Contact contact;
 	std::string tmp;
 
 	std::cout << "Enter first name:" << std::endl;
-	// TODO getline
-	std::cin >> tmp;
+	tmp = prompt();
 	contact.setFirstName(tmp);
 
 	std::cout << "Enter last name:" << std::endl;
-	// TODO getline
-	std::cin >> tmp;
+	tmp = prompt();
 	contact.setLastName(tmp);
 
 	std::cout << "Enter nick name:" << std::endl;
-	// TODO getline
-	std::cin >> tmp;
+	tmp = prompt();
 	contact.setNickName(tmp);
 
 	std::cout << "Enter phone number:" << std::endl;
-	// TODO getline
-	std::cin >> tmp;
+	tmp = prompt();
 	contact.setPhoneNumber(tmp);
 
 	std::cout << "Enter the darkest secret:" << std::endl;
-	// TODO getline
-	std::cin >> tmp;
+	tmp = prompt();
 	contact.setSecret(tmp);
 	return contact;
 }
@@ -65,7 +72,7 @@ int main() {
 	std::string command;
 	do {
 		std::cout << "Enter a command (ADD, SEARCH, EXIT):" << std::endl;
-		getline(std::cin, command);
+		command = prompt();
 		if (command.compare("ADD") == 0) {
 			book.add(addContact());
 		} else if (command.compare("SEARCH") == 0) {
