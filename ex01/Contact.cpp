@@ -1,28 +1,27 @@
 #include "Contact.hpp"
 
-Contact::Contact() {
-	this->initialized = false;
+Contact::Contact(): initialized(false) {
 }
 
 Contact::~Contact() {}
 
-std::string Contact::getFirstName() {
+std::string Contact::getFirstName() const {
 	return this->firstName;
 }
 
-std::string Contact::getLastName() {
+std::string Contact::getLastName() const {
 	return this->lastName;
 }
 
-std::string Contact::getNickName() {
+std::string Contact::getNickName() const {
 	return this->nickName;
 }
 
-std::string Contact::getPhoneNumber() {
+std::string Contact::getPhoneNumber() const {
 	return this->phoneNumber;
 }
 
-std::string Contact::getSecret() {
+std::string Contact::getSecret() const {
 	return this->secret;
 }
 
@@ -51,6 +50,6 @@ void Contact::setSecret(std::string secret) {
 	this->secret = secret;
 }
 
-bool Contact::isInitialized() {
+bool Contact::isInitialized() const {
 	return this->initialized;
 }

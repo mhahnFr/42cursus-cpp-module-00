@@ -7,22 +7,22 @@ class Contact {
 		Contact();
 		~Contact();
 
-		std::string getFirstName();
+		std::string getFirstName() const;
 		void        setFirstName(std::string);
 
-		std::string getLastName();
+		std::string getLastName() const;
 		void        setLastName(std::string);
 
-		std::string getNickName();
+		std::string getNickName() const;
 		void        setNickName(std::string);
 
-		std::string getSecret();
+		std::string getSecret() const;
 		void        setSecret(std::string);
 
-		std::string getPhoneNumber();
+		std::string getPhoneNumber() const;
 		void        setPhoneNumber(std::string);
 
-		bool isInitialized();
+		bool isInitialized() const;
 
 	private:
 		std::string firstName;

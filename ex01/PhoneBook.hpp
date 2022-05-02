@@ -8,7 +8,7 @@ class PhoneBook {
 		~PhoneBook();
 
 		void add(Contact);
-		Contact find(int);
+		Contact find(int) const;
 
 	private:
 		Contact contacts[8];
