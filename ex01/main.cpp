@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 #include "PhoneBook.hpp"
@@ -50,6 +51,18 @@ bool isValidInteger(std::string& str) {
 	return true;
 }
 
+void printString(std::string const & str) {
+	std::cout << "|";
+	if (str.size() > 10) {
+		for (size_t i = 0; i < 9; i++) {
+			std::cout << str[i];
+		}
+		std::cout << ".";
+	} else {
+		std::cout << std::setw(10) << str;
+	}
+}
+
 void findAndPrintContact(PhoneBook& book) {
 	int index;
 	std::string line;
@@ -61,14 +74,12 @@ void findAndPrintContact(PhoneBook& book) {
 		if (index >= 0 && index <= 7) {
 			Contact c = book.find(index);
 			if (c.isInitialized()) {
-				// TODO out stream manipulations!!!
-				std::cout
-					<< "|" << c.getFirstName()
-					<< "|" << c.getLastName()
-					<< "|" << c.getNickName()
-					<< "|" << c.getPhoneNumber()
-					<< "|" << c.getSecret()
-					<< std::endl;
+				printString(c.getFirstName());
+				printString(c.getLastName());
+				printString(c.getNickName());
+				printString(c.getPhoneNumber());
+				printString(c.getSecret());
+				std::cout << "|" << std::endl;
 			} else {
 				std::cout << "Empty!" << std::endl;
 			}
