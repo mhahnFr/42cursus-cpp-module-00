@@ -41,27 +41,44 @@ Contact addContact() {
 	return contact;
 }
 
+bool isValidInteger(std::string& str) {
+	for (size_t i = 0; i < str.size(); i++) {
+		if (!isdigit(str[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+
 void findAndPrintContact(PhoneBook& book) {
 	int index;
+	std::string line;
 
 	std::cout << "Enter the index of the contact:" << std::endl;
-	std::cin >> index;
-	if (index >= 0 && index <= 7) {
-		Contact c = book.find(index);
-		if (c.isInitialized()) {
-			// TODO out stream manipulations!!!
-			std::cout
-				<< "|" << c.getFirstName()
-				<< "|" << c.getLastName()
-				<< "|" << c.getNickName()
-				<< "|" << c.getPhoneNumber()
-				<< "|" << c.getSecret()
-				<< std::endl;
+	line = prompt();
+	if (isValidInteger(line)) {
+		index = atoi(line.c_str());
+		if (index >= 0 && index <= 7) {
+			Contact c = book.find(index);
+			if (c.isInitialized()) {
+				// TODO out stream manipulations!!!
+				std::cout
+					<< "|" << c.getFirstName()
+					<< "|" << c.getLastName()
+					<< "|" << c.getNickName()
+					<< "|" << c.getPhoneNumber()
+					<< "|" << c.getSecret()
+					<< std::endl;
+			} else {
+				std::cout << "Empty!" << std::endl;
+			}
 		} else {
-			std::cout << "Empty!" << std::endl;
+			std::cout << "Invalid index: " << index << std::endl;
+			findAndPrintContact(book);
 		}
 	} else {
-		std::cout << "Invalid index: " << index << std::endl;
+		std::cout << "Not a valid number!" << std::endl;
+		findAndPrintContact(book);
 	}
 }
 
